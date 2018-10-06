@@ -7,7 +7,9 @@
 [![MicroBadger Layers](https://img.shields.io/microbadger/layers/tmknom/terrascan.svg)](https://microbadger.com/images/tmknom/terrascan)
 [![License](https://img.shields.io/github/license/tmknom/terrascan.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Dockerfile template.
+Collection of security and best practice test for static code analysis of terraform templates.
+
+This is [terrascan](https://github.com/tmknom/yamllint) wrapper.
 
 ## Requirements
 
@@ -15,9 +17,16 @@ Dockerfile template.
 
 ## Usage
 
+### Test
+
 ```sh
-curl -fsSL https://raw.githubusercontent.com/tmknom/terrascan/master/install | sh -s example
-cd example
+docker run --rm -v "$PWD:/work" tmknom/terrascan --location . --test all
+```
+
+### Help
+
+```sh
+ docker run --rm tmknom/terrascan
 ```
 
 ## Makefile targets
