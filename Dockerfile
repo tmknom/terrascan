@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM python:3.7.0-alpine3.8
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -16,6 +16,10 @@ LABEL org.label-schema.vendor="tmknom" \
       org.label-schema.docker.cmd="docker run --rm -i $REPO_NAME" \
       org.label-schema.schema-version="1.0"
 
+ARG MODULE_VERSION=0.1.0
+
+RUN pip install --no-cache-dir terrascan==${MODULE_VERSION}
+
 WORKDIR /work
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/usr/local/bin/terrascan"]
 CMD ["--help"]
