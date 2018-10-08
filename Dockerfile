@@ -1,4 +1,4 @@
-FROM python:3.7.0-alpine3.8
+FROM alpine:3.8
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -16,10 +16,22 @@ LABEL org.label-schema.vendor="tmknom" \
       org.label-schema.docker.cmd="docker run --rm  -v \$PWD:/work $REPO_NAME --location . --test all" \
       org.label-schema.schema-version="1.0"
 
+ARG PYTHON_VERSION=3.6.6-r0
 ARG MODULE_VERSION=0.1.0
 
-RUN pip install --no-cache-dir terrascan==${MODULE_VERSION}
+# https://github.com/JoshuaRLi/alpine-python3-pip/blob/master/Dockerfile
+RUN set -x && \
+    apk add --no-cache python3=${PYTHON_VERSION} && \
+    pip3 install --no-cache-dir terrascan==${MODULE_VERSION} && \
+    find / -type d -name __pycache__ -exec rm -r {} + && \
+    rm -r /usr/lib/python*/ensurepip && \
+    rm -r /usr/lib/python*/lib2to3 && \
+    rm -r /usr/lib/python*/turtledemo && \
+    rm /usr/lib/python*/turtle.py && \
+    rm /usr/lib/python*/webbrowser.py && \
+    rm /usr/lib/python*/doctest.py && \
+    rm /usr/lib/python*/pydoc.py
 
 WORKDIR /work
-ENTRYPOINT ["/usr/local/bin/terrascan"]
+ENTRYPOINT ["/usr/bin/terrascan"]
 CMD ["--help"]
