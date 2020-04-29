@@ -51,7 +51,9 @@ make install
 
 ### Deployment
 
-Automatically deployed by "[DockerHub Automated Build](https://docs.docker.com/docker-hub/builds/)" after merge.
+1. Bump [VERSION](https://raw.githubusercontent.com/tmknom/terrascan/master/VERSION) file.
+2. Run `make release`.
+3. Automatically deployed by "[Docker Hub Automated Build](https://docs.docker.com/docker-hub/builds/)".
 
 ### Deployment Pipeline
 
