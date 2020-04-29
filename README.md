@@ -14,7 +14,7 @@
 
 Collection of security and best practice test for static code analysis of terraform templates.
 
-This is [terrascan](https://github.com/tmknom/yamllint) wrapper.
+This is [terrascan](https://github.com/cesar-rodriguez/terrascan) wrapper.
 
 ## Requirements
 
