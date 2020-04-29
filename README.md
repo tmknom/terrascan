@@ -1,6 +1,11 @@
 # terrascan
 
-[![CircleCI](https://circleci.com/gh/tmknom/terrascan.svg?style=svg)](https://circleci.com/gh/tmknom/terrascan)
+[![Dockerfile Actions Status](https://github.com/tmknom/terrascan/workflows/Dockerfile/badge.svg)](https://github.com/tmknom/terrascan/actions?query=workflow%3ADockerfile)
+[![Shell Script Actions Status](https://github.com/tmknom/terrascan/workflows/Shell%20Script/badge.svg)](https://github.com/tmknom/terrascan/actions?query=workflow%3A%22Shell+Script%22)
+[![Markdown Actions Status](https://github.com/tmknom/terrascan/workflows/Markdown/badge.svg)](https://github.com/tmknom/terrascan/actions?query=workflow%3AMarkdown)
+[![YAML Actions Status](https://github.com/tmknom/terrascan/workflows/YAML/badge.svg)](https://github.com/tmknom/terrascan/actions?query=workflow%3AYAML)
+[![JSON Actions Status](https://github.com/tmknom/terrascan/workflows/JSON/badge.svg)](https://github.com/tmknom/terrascan/actions?query=workflow%3AJSON)
+
 [![Docker Build Status](https://img.shields.io/docker/build/tmknom/terrascan.svg)](https://hub.docker.com/r/tmknom/terrascan/builds/)
 [![Docker Automated build](https://img.shields.io/docker/automated/tmknom/terrascan.svg)](https://hub.docker.com/r/tmknom/terrascan/)
 [![MicroBadger Size](https://img.shields.io/microbadger/image-size/tmknom/terrascan.svg)](https://microbadger.com/images/tmknom/terrascan)
